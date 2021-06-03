@@ -1,0 +1,74 @@
+:language: Swedish
+:!english:
+:swedish:
+:!danish:
+:norwegian:
+= Multi-language document example
+My Name <my.email@adress.here>
+
+////
+First example uses a shared variable that can only be set to one language
+////
+
+ifeval::["{language}" == "English"]
+[NOTE]
+====
+Only show me if the language is set to English!
+====
+endif::[]
+
+ifeval::["{language}" == "Swedish"]
+[NOTE]
+====
+Detta visas bara om language[] är satt till Svenska!
+====
+endif::[]
+
+
+ifeval::["{language}" == "Danish"]
+[NOTE]
+====
+"oförståeligt uttal"
+====
+endif::[]
+
+ifeval::["{language}" == "Norwegian"]
+[NOTE]
+====
+"som en lite för överförfriskad svensk"
+====
+endif::[]
+
+////
+The second example checks if a variable has been defined or not,
+allowing for multiple blocks to be shown by defining them.
+////
+
+ifdef::english[]
+[NOTE]
+====
+Only shown if the variable english[] has been set!
+====
+endif::[]
+
+ifdef::swedish[]
+[NOTE]
+====
+Visas bara om variabeln swedish[] är definerad.
+====
+endif::[]
+
+
+ifdef::danish[]
+[NOTE]
+====
+"oförståeligt uttal", men bara om danish[] är definerad.
+====
+endif::[]
+
+ifdef::norwegian[]
+[NOTE]
+====
+"som en lite för överförfriskad svensk", men bara om norwegian[] är definerad
+====
+endif::[]

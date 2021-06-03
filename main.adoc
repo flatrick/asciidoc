@@ -1,0 +1,34 @@
+:names-company: The Hillbillies 2000
+= My journey with learning AsciiDoc - {names-company}
+My Name <my.email@adress.here>
+
+////
+The very first line is a variable that we can use throughout our entire document, even in included documents we add later.
+This way, if we ever change the company name, we can replace it one place and it will be updated everywhere we use the variable.
+
+The first '= Text' is the name of the document.
+
+The line that follows the title is the Author-line, the mail-address is supposed to be within the <> characters, just as it is shown above.
+It has to be added just below the title with no empty lines between.
+////
+
+ifdef::names-company[]
+[NOTE]
+====
+This text will only be shown if we defined the variable \{names-company\}
+====
+endif::names-company[]
+
+ifdef::names-deity[]
+[NOTE]
+====
+This text will only be shown if we defined the variable \{names-deity\}
+====
+endif::names-deity[]
+
+////
+Using ifdef (if defined) allows us to create different outputs based on which variables we've defined. 
+One suitable practice could be for multi-language documents, instead of having a document per language, we might have multipe languages in the same file, but based on which variable is defined, we'll output the different blocks.
+////
+
+include::multi-language.adoc[]
