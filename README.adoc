@@ -1,0 +1,59 @@
+= Example project for AsciiDoc -> DocBook -> Webhelp
+
+== Requirements
+
+=== Installed using Chocolately
+
+[source,powershell]
+----
+choco install adoptopenjdk11
+choco install jruby
+choco install python3
+choco install ant
+choco install docbook-bundle
+<# 
+xsltproc might not even be necessary at all, keeping this here mostly "just in case".
+It is also installed as a part of JRuby so that should cover any potential need for it. 
+#>
+<# choco install xsltproc #>
+----
+
+=== Installed using JRuby
+
+[source,bash]
+----
+jruby -S gem install asciidoctor-pdf pygments.rb
+----
+
+== Automated build using Ant
+
+This project has been set up to use *Ant* to build from *AsciiDoc* to *Docbook* and then finally to *WebHelp*.
+The project has a default configuration-file for the _DocBook-to-WebHelp_ build *(build.properties)*, but if a different propertyfile is supplied on the commandline, it will override the default one.
+
+The *docbook-bundle* comes with a default *build.properties* and *build.xml* that this is based upon.
+
+To build with the default file, simply run: `ant` +
+If you want to supply a different file, run: `ant -propertyfile MyOwnBuild.properties`
+
+== Manual instructions
+
+===  AsciiDoc to DocBook
+
+[source,powershell]
+====
+asciidoctor.bat -b docbook .\main.adoc
+====
+
+
+=== Convert DocBook to Webhelp (Ant build)
+
+[source,powershell]
+====
+ant webhelp -Doutput-dir=test-output
+start test-output\index.html
+====
+
+== Sources of information
+
+. https://cdn.docbook.org/release/xsl/1.79.2/webhelp/docs/ch02s01.html[Instructions from the authors of DocBook]
+. https://docs.atlas.oreilly.com/writing_in_asciidoc.html#indexing

@@ -4,11 +4,22 @@
 :!danish:
 :norwegian:
 = Multi-language document example
-My Name <my.email@adress.here>
+:author: Mitt Namn
+:email: <mitt.email@adress.here>
+:author_2: Hans Namn
+:email_2: <hans.email@adress.here>
+
+////
+Author(s) and their email-adresses are only expected to be found in the "main" document.
+Because of this, if we want to have separate authors for sub-documents, these will have to be written out using the explicit style.
+The first author corresponds to {author} and {email}, the second author corresponds to {author_2} and {email_2}.
+////
 
 ////
 First example uses a shared variable that can only be set to one language
 ////
+
+{author} är den primära författaren, {author_2} hjälper till!
 
 ifeval::["{language}" == "English"]
 [NOTE]
@@ -21,6 +32,7 @@ ifeval::["{language}" == "Swedish"]
 [NOTE]
 ====
 Detta visas bara om language[] är satt till Svenska!
+((("språk", "bäst", "patriot")))
 ====
 endif::[]
 
