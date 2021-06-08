@@ -41,16 +41,15 @@ If you want to supply a different file, run: `ant -propertyfile MyOwnBuild.prope
 
 [source,powershell]
 ====
-asciidoctor.bat -b docbook .\main.adoc
+asciidoctor.bat -b docbook .\asciidoc\main.adoc -o .\docbook\main.xml
 ====
-
 
 === Convert DocBook to Webhelp (Ant build)
 
 [source,powershell]
 ====
-ant webhelp -Doutput-dir=test-output
-start test-output\index.html
+ant
+start webhelp\index.html
 ====
 
 == Sources of information
