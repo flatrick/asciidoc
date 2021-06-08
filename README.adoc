@@ -40,17 +40,17 @@ If you want to supply a different file, run: `ant -propertyfile MyOwnBuild.prope
 ===  AsciiDoc to DocBook
 
 [source,powershell]
-====
+----
 asciidoctor.bat -b docbook .\asciidoc\main.adoc -o .\docbook\main.xml
-====
+----
 
 === Convert DocBook to Webhelp (Ant build)
 
 [source,powershell]
-====
+----
 ant
 start webhelp\index.html
-====
+----
 
 == Sources of information
 
