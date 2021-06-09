@@ -40,14 +40,14 @@ To store this for your logged in user, you can run this command:
 
 [source,powershell]
 ----
-Environment]::SetEnvironmentVariable("CLASSPATH",'C:\ProgramData\chocolatey\lib\docbook-bundle\docbook-xsl-1.79.1\tools\lib\saxon.jar',"User")
+[Environment]::SetEnvironmentVariable("CLASSPATH",'C:\ProgramData\chocolatey\lib\docbook-bundle\docbook-xsl-1.79.1\tools\lib\saxon.jar',"User")
 ----
 
 If you want to store the setting for all users on the computer, you'll need to start Powershell with elevated permission, then you can run this:
 
 [source,powershell]
 ----
-Environment]::SetEnvironmentVariable("CLASSPATH",'C:\ProgramData\chocolatey\lib\docbook-bundle\docbook-xsl-1.79.1\tools\lib\saxon.jar',"Machine")
+[Environment]::SetEnvironmentVariable("CLASSPATH",'C:\ProgramData\chocolatey\lib\docbook-bundle\docbook-xsl-1.79.1\tools\lib\saxon.jar',"Machine")
 ----
 
 == Automated build using Ant
