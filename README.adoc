@@ -25,6 +25,31 @@ It is also installed as a part of JRuby so that should cover any potential need 
 jruby -S gem install asciidoctor-pdf pygments.rb
 ----
 
+== Current issues
+
+As of yet, I haven't found a way to set up CLASSPATH for the saxon.jar using `build.xml` or `build.properties`. +
+The only way I've gotten it to work is by setting the system environment variable CLASSPATH to point to saxon.jar, +
+this can also be set "temporarily" in Powershell for the currently running shell by running this command:
+
+[source,powershell]
+----
+$env:classpath = 'C:\ProgramData\chocolatey\lib\docbook-bundle\docbook-xsl-1.79.1\tools\lib\saxon.jar'
+----
+
+To store this for your logged in user, you can run this command:
+
+[source,powershell]
+----
+Environment]::SetEnvironmentVariable("CLASSPATH",'C:\ProgramData\chocolatey\lib\docbook-bundle\docbook-xsl-1.79.1\tools\lib\saxon.jar',"User")
+----
+
+If you want to store the setting for all users on the computer, you'll need to start Powershell with elevated permission, then you can run this:
+
+[source,powershell]
+----
+Environment]::SetEnvironmentVariable("CLASSPATH",'C:\ProgramData\chocolatey\lib\docbook-bundle\docbook-xsl-1.79.1\tools\lib\saxon.jar',"Machine")
+----
+
 == Automated build using Ant
 
 This project has been set up to use *Ant* to build from *AsciiDoc* to *Docbook* and then finally to *WebHelp*.
