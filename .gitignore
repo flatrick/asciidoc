@@ -1,4 +1,5 @@
 webhelp/
 docbook/
+dev-*/
 *.pdf
 *~

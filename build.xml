@@ -2,9 +2,11 @@
 	<!-- <property name="input-xml" value="main.xml"/> -->
 	<!-- <property name="input-images-dirs" value="images/** figures/** graphics/**"/> -->
 	<loadproperties srcFile="build.properties"/>
+	<echo>Build DocBook from AsciiDoc sources</echo>
+	<echo>. asciidoctor.bat --backend docbook5 ${asciidoctorArgs} ${asciidocAttributes} --out-file ${basedir}\${asciidoctorDestination} ${basedir}\${asciidoctorSource}</echo>
 	<exec dir="." executable="powershell">
 		<arg line="-ExecutionPolicy bypass"/>
-		<arg line=". asciidoctor.bat -b docbook -o ${basedir}\docbook\main.xml ${basedir}\asciidoc\main.adoc"/>
+		<arg line=". asciidoctor.bat --backend docbook5 ${asciidoctorArgs} ${asciidocAttributes} --out-file ${basedir}\${asciidoctorDestination} ${basedir}\${asciidoctorSource}"/>
 	</exec>
 	<import file="C:/ProgramData/chocolatey/lib/docbook-bundle/docbook-xsl-1.79.1/webhelp/build.xml"/>
 </project>
