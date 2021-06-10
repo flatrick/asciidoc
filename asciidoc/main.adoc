@@ -15,6 +15,14 @@ It has to be added just below the title with no empty lines between.
 
 {author} is the main author, {author_2} assists whenever needed!
 
+////
+Using ifdef (if defined) allows us to create different outputs based on which variables we've defined. 
+One suitable practice could be for multi-language documents, instead of having a document per language,
+we might have multipe languages in the same file, but based on which variable is defined, we'll output the different blocks.
+
+Another practice could be having blocks that are only rendered when we want to see sections that are Work In Progress.
+////
+
 ifdef::names-company[]
 [NOTE]
 ====
@@ -30,11 +38,29 @@ This text will only be shown if we defined the variable \{names-deity\}
 endif::names-deity[]
 
 ////
-Using ifdef (if defined) allows us to create different outputs based on which variables we've defined. 
-One suitable practice could be for multi-language documents, instead of having a document per language, we might have multipe languages in the same file, but based on which variable is defined, we'll output the different blocks.
+Here we're instructing the processor to include the document multi-language.adoc into this document.
+The biggest benefit of doing this is to ensure we don't have to work with very long documents,
+so instead of having 1 file consisting of 3000+ lines, we can have 30 files consisting of 100 lines each.
+You're likely going to store each "chapter" in a separate file so the size of each file will vary.
+
+We're also instructing it to "increase" each header by 1, so the title becomes a level 1 header,
+a level 1 header becomes a level 2 header and so on.
+The benefit of doing this is that we can do a couple of things:
+1. Each separate document can have the :toc: instruction so when you generate each separate .adoc-file,
+it will have it's own Table of Contents.
+2. When you include these "chapters" into your main document, their individual :toc: instructions will be ignored
 ////
 
 include::multi-language.adoc[leveloffset=+1]
 
+////
+The section below will, when converted from DocBook to the WebHelp, 
+become a separate page where all https://asciidoc.org/chunked/ch19.html[indexterm]'s are listed.
+https://docs.asciidoctor.org/asciidoc/latest/sections/[Here is some more info on AsciiDoc and indexterm]
+
+It only makes sense to add this section when converting from a DocBook-source to a desired output,
+so if you're not planning on using this particular workflow (AsciiDoc->DocBook->Output), just remove this section.
+AsciiDoctor's HTML5 converter for example doesn't do anything with this instruction so it can be unnecessary.
+////
 [index]
 == Index
