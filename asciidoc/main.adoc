@@ -35,3 +35,6 @@ One suitable practice could be for multi-language documents, instead of having a
 ////
 
 include::multi-language.adoc[leveloffset=+1]
+
+[index]
+== Index

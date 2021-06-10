@@ -1,6 +1,7 @@
 <project default="webhelp">
 	<!-- <property name="input-xml" value="main.xml"/> -->
 	<!-- <property name="input-images-dirs" value="images/** figures/** graphics/**"/> -->
+	<!-- Need to add pictures and figure out how to properly manage these in the build-process -->
 	<loadproperties srcFile="build.properties"/>
 	<echo>Build DocBook from AsciiDoc sources</echo>
 	<echo>. asciidoctor.bat --backend docbook5 ${asciidoctorArgs} ${asciidocAttributes} --out-file ${basedir}\${asciidoctorDestination} ${basedir}\${asciidoctorSource}</echo>
