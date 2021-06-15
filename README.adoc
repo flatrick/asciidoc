@@ -1,4 +1,13 @@
 = Example project for AsciiDoc -> DocBook -> Webhelp
+:author: flatrick
+:revnumber: 1.0 2021-06-11
+:revremark: Getting ever closer to good example project to help others get started
+
+== Introduction
+
+This project is meant to be an example on how to setup and manage HTML-based help documents, authored in AsciiDoc.
+AsciiDoc is a lightweight markup language that shares the simplicity of similiar languages such as Markdown, 
+but it comes with a larger set of features than most Markdown flavours, at least without any extensions added.
 
 == Requirements
 
@@ -30,7 +39,7 @@ jruby -S gem install asciidoctor-pdf pygments.rb
 As of yet, I haven't found a way to set up CLASSPATH for the saxon.jar using `build.xml` or `build.properties`. +
 The instructions from DocBook says that *"when you generate output, the Saxon jar must not be in your CLASSPATH"*. +
 This might mean that I'd have to copy the entire DocBook bundle into the repository and edit the *build.xml* from DocBook.
-+
+
 For now, I've gotten it to work by setting the system environment variable `CLASSPATH` to point to saxon.jar. +
 This can also be set "temporarily" in Powershell for the currently running shell by running this command:
 

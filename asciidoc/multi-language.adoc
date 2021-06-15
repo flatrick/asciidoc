@@ -1,8 +1,8 @@
 :language: Swedish
-:!english:
+:english:
 :swedish:
 :!danish:
-:norwegian:
+:!norwegian:
 = Multi-language document example
 :author: Mitt Namn
 :email: <mitt.email@adress.here>
@@ -24,15 +24,16 @@ First example uses a shared variable that can only be set to one language
 ifeval::["{language}" == "English"]
 [NOTE]
 ====
-Only show me if the language is set to English!
+\{language\} is set to "English"
+((("language-family", "germanic", "west germanic")))
 ====
 endif::[]
 
 ifeval::["{language}" == "Swedish"]
 [NOTE]
 ====
-Detta visas bara om language[] är satt till Svenska!
-((("språk", "bäst", "patriot")))
+\{language\} är satt till "Swedish"
+((("language-family", "germanic", "north germanic")))
 ====
 endif::[]
 
@@ -40,14 +41,16 @@ endif::[]
 ifeval::["{language}" == "Danish"]
 [NOTE]
 ====
-"oförståeligt uttal"
+\{language\} er indstillet til "Danish"
+((("language-family", "germanic", "north germanic")))
 ====
 endif::[]
 
 ifeval::["{language}" == "Norwegian"]
 [NOTE]
 ====
-"som en lite för överförfriskad svensk"
+\{language\} er satt til "Norwegian"
+((("language-family", "germanic", "north germanic")))
 ====
 endif::[]
 
@@ -59,7 +62,8 @@ allowing for multiple blocks to be shown by defining them.
 ifdef::english[]
 [NOTE]
 ====
-Only shown if the variable english[] has been set!
+Only shown if the variable english[] is defined.
+((("language-family", "germanic", "west germanic")))
 ====
 endif::[]
 
@@ -67,20 +71,22 @@ ifdef::swedish[]
 [NOTE]
 ====
 Visas bara om variabeln swedish[] är definerad.
+((("language-family", "germanic", "north germanic")))
 ====
 endif::[]
-
 
 ifdef::danish[]
 [NOTE]
 ====
-"oförståeligt uttal", men bara om danish[] är definerad.
+Vises kun om variablen danish[] er defineret.
+((("language-family", "germanic", "north germanic")))
 ====
 endif::[]
 
 ifdef::norwegian[]
 [NOTE]
 ====
-"som en lite för överförfriskad svensk", men bara om norwegian[] är definerad
+Vises bare hvis variabelen norwegian[] er definert.
+((("language-family", "germanic", "north germanic")))
 ====
 endif::[]

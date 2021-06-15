@@ -1,9 +1,12 @@
 :names-company: The Hillbillies 2000
+:sectanchors:
 = My journey with learning AsciiDoc - {names-company}
 My Name <my.email@adress.here>; His Name <his.email@adress.here>
+:revnumber: 1.0 2021-06-11
+:revremark: This document should serve as a decent sample document
 
 ////
-The very first line is a variable that we can use throughout our entire document, even in included documents we add later.
+The very first line is a attribute (variable) that we can use throughout our entire document, even in included documents we add later.
 This way, if we ever change the company name, we can replace it one place and it will be updated everywhere we use the variable.
 
 The first '= Text' is the name of the document.
@@ -64,3 +67,13 @@ AsciiDoctor's HTML5 converter for example doesn't do anything with this instruct
 ////
 [index]
 == Index
+
+
+[glossary]
+== Terminology
+
+
+[glossary]
+comments:: explanations for authors that the end-users will not see
+attributes::
+equivalent to what a programmer would refer to as *variables*
