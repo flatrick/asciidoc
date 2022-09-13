@@ -11,7 +11,7 @@ but it comes with a larger set of features than most Markdown flavours, at least
 
 == Requirements
 
-=== Installed using Chocolately
+=== Installed using [Chocolatey](https://chocolatey.org/)
 
 [source,powershell]
 ----
